@@ -8,9 +8,8 @@ var cors = require('cors');
 
 var app = express();
 
-var PORT = 3000;
-var HOST_NAME = 'localhost';
-var DATABASE_NAME = 'foodieee';
+var port = process.env.PORT || 3000;
+
 
 
 var uri = 'mongodb://vicky:vickymaha123@ds261072.mlab.com:61072/foodieee';
@@ -54,7 +53,7 @@ app.use('/api', itemRouter);
 app.use('/api', userRouter);
 app.use('/api', cartRouter);
 
-app.listen(PORT, function () {
+app.listen(port, function () {
 	// console.log("Database connected");
-  console.log('Listening on port ' + PORT);
+  console.log('Listening on port ' + port);
 });
